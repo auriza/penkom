@@ -1,0 +1,16 @@
+{
+  "default": {
+    "container-title": {
+      "Journal of Intelligent & Robotic Systems": "J Intell Robot Syst",
+      "Procedia Computer Science": "Procedia Comput Sci",
+      "International Conference on System Science and Engineering (ICSSE)": "Int Conf Syst Sci Eng",
+      "International Conference on Reliability, Optimization, and Information Technology (ICROIT)": "Int Conf Rel Optim Inform Technol"
+    },
+    "publisher": {
+      "IPB Press": "IPB Pr"
+    },
+    "author": {
+      "Institut Pertanian Bogor": "IPB"
+    }
+  }
+}

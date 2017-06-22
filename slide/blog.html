@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Linux Weekly News</title>
+    <meta name="description" content="HTML5 layout example using LWN.net content" />
+    <meta name="author" content="Auriza Akbar" />
+    <link rel="icon" href="favicon.ico" />
+    <style>
+    /* Layout dasar (layar >= 800 pixel) */
+    body {
+        max-width: 800px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    nav ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin-right: 25px;
+    }
+    section#articles {
+        float: left;
+        width: 70%;
+    }
+    aside {
+        float: right;
+        width: 25%;
+    }
+    footer {
+        clear: both;
+    }
+
+    /* Layout untuk layar kecil */
+    @media only screen and (max-width: 799px) {
+        body {
+            max-width: 600px;
+        }
+        section#articles {
+            float: none;
+            width: 100%; }
+        aside {
+            float: none;
+            width: 100%; }
+    }
+
+    /* Style */
+    body {
+        background: white;
+        color: #444;
+        font: 14px/1.5 "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding: 0 1em;
+    }
+    h1 {
+        color: #181818;
+        font: 46px/1.1 "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
+        margin-bottom: 14px;
+    }
+    section h1 {
+        font-size: 35px;
+        line-height: 1.15;
+        margin-bottom: 10px;
+    }
+    section article h1, aside h1 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    body>header, article { border-bottom: 1px solid #ddd; }
+    footer { margin: 2em 0; }
+    header h1+p { font-style: italic; }
+
+    a, a:visited { color: #333; }
+    a:hover, a:focus { color: black; }
+    h1>a { text-decoration: none; }
+    p { margin: 0 0 20px 0; }
+    q { color: maroon; }
+    ul {
+        list-style-type: square;
+        margin-bottom: 20px;
+        padding-left: 2em;
+    }
+    li {
+        line-height: 18px;
+        margin-bottom: 12px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="#">Linux Weekly News</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Archives</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="articles">
+        <h1>Articles</h1>
+
+        <article>
+            <header>
+                <h1>The 3.5 merge window has closed</h1>
+                <p>Posted on <time>2012-06-03</time> by jake</p>
+            </header>
+            <p>Linus Torvalds has released <a href="#">3.5-rc1</a> which closes the merge window for this development cycle. <q>It's a pretty normal release—roughly 60% drivers, 20% arch updates, and 20% <em>all over</em>: filesystems, documentation, tools, you name it. … Depending on what your interest is, you might be excited about the CoDel packet scheduler, or about the GPU driver updates, or the new scsi targets. There is something in here for pretty much anybody.</q> We covered what's been merged up through May 30 in two parts and will pick up any significant merges since then in next week's edition.</p>
+        </article>
+
+        <article>
+            <header>
+                <h1>Moonlight sent into twilight (The H)</h1>
+                <p>Posted <time>2012-05-30</time> by ris</p>
+            </header>
+            <p>The H <a rel="external" href="http://www.h-online.com/newsticker/news/item/Moonlight-sent-into-twilight-Update-1586494.html">looks into the death of Moonlight</a>, a free software implementation of Microsoft's Silverlight platform.  <q>Microsoft has been playing down Silverlight over the last year and a half, after previously promoting it as strategically important. In Windows 8, Silverlight is taking a back seat to HTML5 in the browser and for applications. Without Microsoft's weight behind Silverlight, the future for Moonlight has looked less and less promising.</q></p>
+        </article>
+
+        <article>
+            <header>
+                <h1>LibreOffice 3.5.4 released</h1>
+                <p>Posted <time>2012-05-30</time> by corbet</p>
+            </header>
+            <p>The LibreOffice 3.5.4 release is out; this is a minor update but it may be of interest to those interested in better performance: <q>LibreOffice 3.5.4 is the fastest version of the best free office suite ever, with up to 100% performance gains when opening large files (depending on operating system, hardware configuration and file contents).</q></p>
+        </article>
+
+    </section>
+
+    <aside>
+        <h1>Categories</h1>
+        <ul>
+            <li><a href="#">Kernel</a></li>
+            <li><a href="#">Release</a></li>
+            <li><a href="#">Security</a></li>
+        </ul>
+    </aside>
+
+    <footer>© 2012 Eklektix Inc. All rights reserved.</footer>
+
+</body>
+</html>
