@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Auriza Akbar">
+  <meta name="dcterms.date" content="2017-01-01">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  
+  
+  
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section><section id="section" class="titleslide slide level1"><h1></h1></section><section id="pendahuluan" class="slide level2">
+<h2>Pendahuluan</h2>
+<ul>
+<li>= “technical text”</li>
+<li>bahasa untuk menyiapkan dokumen teks</li>
+<li>dibuat oleh Knuth (1978) untuk mencetak bukunya</li>
+<li>dikembangkan oleh Lamport (1985) menjadi </li>
+</ul>
+</section><section id="mengapa" class="slide level2">
+<h2>Mengapa ?</h2>
+<ul>
+<li><em>free</em> dan <em>open format</em></li>
+<li>hasil profesional berkualitas tinggi</li>
+<li>mudah mengatur struktur yang kompleks
+<ul>
+<li>daftar isi, catatan kaki, bibliografi, indeks, …</li>
+</ul></li>
+<li>banyak buku dan jurnal memakai </li>
+</ul>
+</section><section id="instalasi" class="slide level2">
+<h2>Instalasi </h2>
+<dl>
+<dt>Windows</dt>
+<dd><a href="http://miktex.org/download">MikTeX</a>
+</dd>
+<dt>Linux</dt>
+<dd><code>apt install texlive</code>
+</dd>
+<dt><em>Online</em></dt>
+<dd><a href="http://sharelatex.com">sharelatex.com</a>
+</dd>
+</dl>
+</section><section id="kerangka-dasar" class="slide level2">
+<h2>Kerangka Dasar</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="bu">\documentclass</span>{<span class="ex">article</span>}     <span class="co">% preamble</span>
+
+<span class="kw">\begin</span>{<span class="ex">document</span>}            <span class="co">% document</span>
+
+    Hello world!
+
+<span class="kw">\end</span>{<span class="ex">document</span>}</code></pre></div>
+<h3 id="kompilasi">Kompilasi</h3>
+<p>Simpan dalam <em>file</em> <code>.tex</code>, lalu <em>compile</em> dengan <code>pdflatex</code>. Hasil kompilasi berupa <em>file</em> PDF.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">pdflatex</span> file.tex</code></pre></div>
+</section></section>
+<section><section id="preamble" class="titleslide slide level1"><h1>Preamble</h1></section><section id="kelas-dokumen" class="slide level2">
+<h2>Kelas Dokumen</h2>
+<p><code class="sourceCode latex"><span class="bu">\documentclass</span>[options]{<span class="ex">class</span>}</code></p>
+<ul>
+<li><code>class</code>
+<ul>
+<li><code>book</code></li>
+<li><code>article</code></li>
+<li><code>report</code></li>
+<li><code>letter</code></li>
+<li><code>beamer</code></li>
+</ul></li>
+<li><code>options</code>
+<ul>
+<li><code>10pt</code>, <code>11pt</code>, <code>12pt</code></li>
+<li><code>a4paper</code>, <code>letterpaper</code></li>
+<li><code>twoside</code>, <code>twocolumn</code></li>
+</ul></li>
+</ul>
+</section><section id="paket-tambahan" class="slide level2">
+<h2>Paket Tambahan</h2>
+<p><code class="sourceCode latex"><span class="bu">\usepackage</span>[options]{<span class="ex">package</span>}</code></p>
+<ul>
+<li>fungsi tambahan untuk dokumen</li>
+<li>contoh:
+<ul>
+<li><code class="sourceCode latex"><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</code></li>
+<li><code class="sourceCode latex"><span class="bu">\usepackage</span>{<span class="ex">booktabs</span>}</code></li>
+<li><code class="sourceCode latex"><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</code></li>
+</ul></li>
+</ul>
+</section><section id="metadata" class="slide level2">
+<h2>Metadata</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="fu">\title</span>{...}
+
+<span class="fu">\author</span>{...}
+
+<span class="fu">\date</span>{...}</code></pre></div>
+</section></section>
+<section><section id="document" class="titleslide slide level1"><h1>Document</h1></section><section id="judul-dan-abstrak" class="slide level2">
+<h2>Judul dan Abstrak</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="fu">\maketitle</span>
+
+<span class="kw">\begin</span>{<span class="ex">abstract</span>}        <span class="co">% khusus report dan article</span>
+    ...
+<span class="kw">\end</span>{<span class="ex">abstract</span>}</code></pre></div>
+</section><section id="bagian" class="slide level2">
+<h2>Bagian</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="kw">\part</span>{...}              <span class="co">% khusus book</span>
+
+<span class="kw">\chapter</span>{...}           <span class="co">% khusus book dan report</span>
+
+<span class="kw">\section</span>{...}
+
+<span class="kw">\subsection</span>{...}
+
+<span class="kw">\subsubsection</span>{...}
+
+<span class="kw">\paragraph</span>{...}
+
+<span class="kw">\subparagraph</span>{...}</code></pre></div>
+</section><section id="paragraf" class="slide level2">
+<h2>Paragraf</h2>
+<ul>
+<li>paragraf ditulis langsung tanpa perintah khusus</li>
+<li>satu baris kosong memisahkan antar-paragraf</li>
+</ul>
+</section><section id="contoh" class="slide level2">
+<h2>Contoh</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="bu">\documentclass</span>[a4paper]{<span class="ex">article</span>}
+<span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}
+
+<span class="fu">\title</span>{Pengenalan <span class="fu">\LaTeX</span>}
+<span class="fu">\author</span>{Auriza Akbar}
+<span class="fu">\date</span>{2017}
+
+<span class="kw">\begin</span>{<span class="ex">document</span>}
+  <span class="fu">\maketitle</span>
+
+  <span class="kw">\section</span>{Pendahuluan}
+
+    <span class="fu">\LaTeX</span> adalah bahasa untuk menyiapkan dokumen teks.
+
+<span class="kw">\end</span>{<span class="ex">document</span>}</code></pre></div>
+</section><section id="daftar-isi-gambar-dan-tabel" class="slide level2">
+<h2>Daftar Isi, Gambar, dan Tabel</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="fu">\tableofcontents</span>
+
+<span class="fu">\listoffigures</span>
+
+<span class="fu">\listoftables</span></code></pre></div>
+</section><section id="format-teks" class="slide level2">
+<h2>Format Teks</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Perintah</th>
+<th>Keluaran</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\textnormal</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\emph</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\textrm</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\textsf</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\texttt</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\textbf</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\textit</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\textsc</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\underline</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\tiny</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\small</span>{...}</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\large</span>{...}</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section><section id="list" class="titleslide slide level1"><h1>List</h1></section><section id="list-tanpa-nomor" class="slide level2">
+<h2>List Tanpa Nomor</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="kw">\begin</span>{<span class="ex">itemize</span>}
+  <span class="fu">\item</span> The first item
+  <span class="fu">\item</span> The second item
+  <span class="fu">\item</span> The third
+<span class="kw">\end</span>{<span class="ex">itemize</span>}</code></pre></div>
+
+</section><section id="list-bernomor" class="slide level2">
+<h2>List Bernomor</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="kw">\begin</span>{<span class="ex">enumerate</span>}
+  <span class="fu">\item</span> The first item
+  <span class="fu">\item</span> The second item
+  <span class="fu">\item</span> The third
+<span class="kw">\end</span>{<span class="ex">enumerate</span>}</code></pre></div>
+
+</section><section id="list-deskripsi" class="slide level2">
+<h2>List Deskripsi</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="kw">\begin</span>{<span class="ex">description</span>}
+  <span class="fu">\item</span>[First] The first item
+  <span class="fu">\item</span>[Second] The second item
+  <span class="fu">\item</span>[Third] The third
+<span class="kw">\end</span>{<span class="ex">description</span>}</code></pre></div>
+
+</section><section id="list-bersarang" class="slide level2">
+<h2>List Bersarang</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="kw">\begin</span>{<span class="ex">enumerate</span>}
+  <span class="fu">\item</span> The first item
+    <span class="kw">\begin</span>{<span class="ex">enumerate</span>}
+      <span class="fu">\item</span> Nested item 1
+      <span class="fu">\item</span> Nested item 2
+    <span class="kw">\end</span>{<span class="ex">enumerate</span>}
+  <span class="fu">\item</span> The second item
+  <span class="fu">\item</span> The third item
+<span class="kw">\end</span>{<span class="ex">enumerate</span>}</code></pre></div>
+
+</section></section>
+<section><section id="persamaan-matematika" class="titleslide slide level1"><h1>Persamaan Matematika</h1></section><section id="cara-penulisan" class="slide level2">
+<h2>Cara Penulisan</h2>
+<ul>
+<li><em>inline</em>: diletakkan di dalam tubuh teks
+<ul>
+<li><code class="sourceCode latex"><span class="ss">$...$</span></code></li>
+</ul></li>
+<li><em>displayed</em>: diletakkan pada baris tersendiri
+<ul>
+<li><code class="sourceCode latex"><span class="ss">$$...$$</span></code></li>
+</ul></li>
+<li><em>numbered</em>: diletakkan pada baris tersendiri dan bernomor
+<ul>
+<li><code class="sourceCode latex"><span class="kw">\begin</span>{<span class="ex">equation</span>}<span class="ss">...</span><span class="kw">\end</span>{<span class="ex">equation</span>}</code></li>
+</ul></li>
+<li><p>contoh:</p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="kw">\begin</span>{<span class="ex">equation</span>}
+<span class="ss">  </span><span class="sc">\forall</span><span class="ss"> x </span><span class="sc">\in</span><span class="ss"> X, </span><span class="sc">\quad</span><span class="ss"> </span><span class="sc">\exists</span><span class="ss"> y </span><span class="sc">\le</span><span class="ss"> </span><span class="sc">\epsilon</span>
+<span class="kw">\end</span>{<span class="ex">equation</span>}</code></pre></div></li>
+</ul>
+
+</section><section id="huruf-yunani" class="slide level2">
+<h2>Huruf Yunani</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Perintah</th>
+<th>Keluaran</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\alpha</span></code></td>
+<td><span class="math inline"><em>α</em></span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\beta</span></code></td>
+<td><span class="math inline"><em>β</em></span></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\delta</span></code></td>
+<td><span class="math inline"><em>δ</em></span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\Delta</span></code></td>
+<td><span class="math inline"><em>Δ</em></span></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\gamma</span></code></td>
+<td><span class="math inline"><em>γ</em></span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\kappa</span></code></td>
+<td><span class="math inline"><em>κ</em></span></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\lambda</span></code></td>
+<td><span class="math inline"><em>λ</em></span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\mu</span></code></td>
+<td><span class="math inline"><em>μ</em></span></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\phi</span></code></td>
+<td><span class="math inline"><em>ϕ</em></span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\pi</span></code></td>
+<td><span class="math inline"><em>π</em></span></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\rho</span></code></td>
+<td><span class="math inline"><em>ρ</em></span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\sigma</span></code></td>
+<td><span class="math inline"><em>σ</em></span></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\theta</span></code></td>
+<td><span class="math inline"><em>θ</em></span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\Theta</span></code></td>
+<td><span class="math inline"><em>Θ</em></span></td>
+</tr>
+</tbody>
+</table>
+</section><section id="himpunan" class="slide level2">
+<h2>Himpunan</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Perintah</th>
+<th>Keluaran</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\in</span></code></td>
+<td><span class="math inline">∈</span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\not\in</span></code></td>
+<td><span class="math inline">∉</span></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\subset</span></code></td>
+<td><span class="math inline">⊂</span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\subseteq</span></code></td>
+<td><span class="math inline">⊆</span></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\not\subset</span></code></td>
+<td><span class="math inline">⊄</span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\supset</span></code></td>
+<td><span class="math inline">⊃</span></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\cup</span></code></td>
+<td><span class="math inline">∪</span></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode latex"><span class="fu">\cap</span></code></td>
+<td><span class="math inline">∩</span></td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode latex"><span class="fu">\emptyset</span></code></td>
+<td><span class="math inline">∅</span></td>
+</tr>
+</tbody>
+</table>
+</section><section id="indeks-dan-pangkat" class="slide level2">
+<h2>Indeks dan Pangkat</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ k_{n+1} = n^2 + k_n^2 - k_{n-1} $$</span></code></pre></div>
+<p><br /><span class="math display"><em>k</em><sub><em>n</em> + 1</sub> = <em>n</em><sup>2</sup> + <em>k</em><sub><em>n</em></sub><sup>2</sup> − <em>k</em><sub><em>n</em> − 1</sub></span><br /></p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ n^{22} $$</span></code></pre></div>
+<p><br /><span class="math display"><em>n</em><sup>22</sup></span><br /></p>
+</section><section id="fungsi" class="slide level2">
+<h2>Fungsi</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ </span><span class="sc">\cos</span><span class="ss"> (2</span><span class="sc">\theta</span><span class="ss">) = </span><span class="sc">\cos</span><span class="ss">^2 </span><span class="sc">\theta</span><span class="ss"> - </span><span class="sc">\sin</span><span class="ss">^2 </span><span class="sc">\theta</span><span class="ss"> $$</span></code></pre></div>
+<p><br /><span class="math display">cos(2<em>θ</em>)=cos<sup>2</sup><em>θ</em> − sin<sup>2</sup><em>θ</em></span><br /></p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ </span><span class="sc">\lim</span><span class="ss">_{x </span><span class="sc">\to</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">} </span><span class="sc">\exp</span><span class="ss">(-x) = 0 $$</span></code></pre></div>
+<p><br /><span class="math display">lim<sub><em>x</em> → ∞</sub>exp(−<em>x</em>)=0</span><br /></p>
+</section><section id="pecahan" class="slide level2">
+<h2>Pecahan</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ </span><span class="sc">\frac</span><span class="ss">{n!}{k!(n-k)!} = </span><span class="sc">\binom</span><span class="ss">{n}{k} $$</span></code></pre></div>
+<p><br /><span class="math display">$$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$</span><br /></p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ </span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\frac</span><span class="ss">{1}{x} + </span><span class="sc">\frac</span><span class="ss">{1}{y}}</span>
+<span class="ss">        {y-z} $$</span></code></pre></div>
+<p><br /><span class="math display">$$\frac{\frac{1}{x} + \frac{1}{y}}
+      {y-z}$$</span><br /></p>
+</section><section id="akar" class="slide level2">
+<h2>Akar</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ </span><span class="sc">\sqrt</span><span class="ss">{</span><span class="sc">\frac</span><span class="ss">{a}{b}} $$</span></code></pre></div>
+<p><br /><span class="math display">$$\sqrt{\frac{a}{b}}$$</span><br /></p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ </span><span class="sc">\sqrt</span><span class="ss">[n]{1 + x + x^2 + x^3 + </span><span class="sc">\cdots</span><span class="ss">} $$</span></code></pre></div>
+<p><br /><span class="math display">$$\sqrt[n]{1 + x + x^2 + x^3 + \cdots}$$</span><br /></p>
+</section><section id="sum-product-dan-integral" class="slide level2">
+<h2><em>Sum</em>, <em>Product</em>, dan Integral</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ </span><span class="sc">\sum</span><span class="ss">_{i=1}^{10} t_i $$</span></code></pre></div>
+<p><br /><span class="math display">$$\sum_{i=1}^{10} t_i$$</span><br /></p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ </span><span class="sc">\prod</span><span class="ss">_{n=1}^</span><span class="sc">\infty</span><span class="ss"> a_n $$</span></code></pre></div>
+<p><br /><span class="math display">$$\prod_{n=1}^\infty a_n$$</span><br /></p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ </span><span class="sc">\int</span><span class="ss">_a^b e^{-x}</span><span class="sc">\,</span><span class="ss">dx $$</span></code></pre></div>
+<p><br /><span class="math display">∫<sub><em>a</em></sub><sup><em>b</em></sup><em>e</em><sup>−<em>x</em></sup> <em>d</em><em>x</em></span><br /></p>
+</section><section id="cases" class="slide level2">
+<h2><em>Cases</em></h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="co">%\usepackage{amsmath}</span>
+
+<span class="kw">\begin</span>{<span class="ex">equation</span>}
+<span class="ss">  u(x) =</span>
+<span class="ss">    </span><span class="kw">\begin</span>{<span class="ex">cases</span>}
+<span class="ss">      </span><span class="sc">\exp</span><span class="ss">{x} &amp; </span><span class="sc">\text</span>{if }<span class="ss"> x </span><span class="sc">\ge</span><span class="ss"> 0 </span><span class="sc">\\</span>
+<span class="ss">      1       &amp; </span><span class="sc">\text</span>{if }<span class="ss"> x &lt; 0</span>
+<span class="ss">    </span><span class="kw">\end</span>{<span class="ex">cases</span>}
+<span class="kw">\end</span>{<span class="ex">equation</span>}</code></pre></div>
+
+</section><section id="multiline-split" class="slide level2">
+<h2><em>Multiline Split</em></h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="co">%\usepackage{amsmath}</span>
+
+<span class="kw">\begin</span>{<span class="ex">equation</span>}
+<span class="ss">  </span><span class="kw">\begin</span>{<span class="ex">split</span>}
+<span class="ss">    A &amp; = </span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\pi</span><span class="ss"> r^2}{2}   </span><span class="sc">\\</span>
+<span class="ss">      &amp; = </span><span class="sc">\frac</span><span class="ss">{1}{2} </span><span class="sc">\pi</span><span class="ss"> r^2</span>
+<span class="ss">  </span><span class="kw">\end</span>{<span class="ss">split}</span>
+<span class="kw">\end</span>{<span class="ex">equation</span>}</code></pre></div>
+
+</section><section id="matriks" class="slide level2">
+<h2>Matriks</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$ M = </span><span class="sc">\left</span><span class="ss">[</span>
+<span class="ss">         </span><span class="sc">\begin</span><span class="ss">{array}{ccc}</span>
+<span class="ss">           1 &amp; 2 &amp; 3 </span><span class="sc">\\</span>
+<span class="ss">           4 &amp; 5 &amp; 6 </span><span class="sc">\\</span>
+<span class="ss">           7 &amp; 8 &amp; 9</span>
+<span class="ss">         </span><span class="sc">\end</span><span class="ss">{array}</span>
+<span class="ss">       </span><span class="sc">\right</span><span class="ss">] $$</span></code></pre></div>
+<p><br /><span class="math display">$$M = \left[
+        \begin{array}{ccc}
+          1 &amp; 2 &amp; 3 \\
+          4 &amp; 5 &amp; 6 \\
+          7 &amp; 8 &amp; 9
+        \end{array}
+      \right]$$</span><br /></p>
+</section></section>
+<section><section id="tabel-dan-gambar" class="titleslide slide level1"><h1>Tabel dan Gambar</h1></section><section id="elemen-float" class="slide level2">
+<h2>Elemen <em>Float</em></h2>
+<ul>
+<li>tabel dan gambar: elemen <em>float</em>
+<ul>
+<li>tidak boleh terpotong beda halaman</li>
+</ul></li>
+<li>posisi dapat diberikan pilihan:
+<ul>
+<li><code>h</code>: <em>here</em></li>
+<li><code>b</code>: <em>bottom</em></li>
+<li><code>t</code>: <em>top</em></li>
+<li><code>p</code>: <em>page</em></li>
+</ul></li>
+<li>dapat diberi <em>caption</em> bernomor</li>
+<li>dapat diberi label untuk referensi</li>
+</ul>
+</section><section id="tabel" class="slide level2">
+<h2>Tabel</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="co">%\usepackage{booktabs}</span>
+
+Nilai mahasiswa dapat dilihat pada Tabel <span class="kw">\ref</span>{<span class="ex">tbl.nilai</span>}.
+
+<span class="kw">\begin</span>{<span class="ex">table</span>}[tb]
+  <span class="fu">\caption</span>{Nilai AJK.}
+  <span class="kw">\label</span>{<span class="ex">tbl.nilai</span>}
+  <span class="kw">\begin</span>{<span class="ex">tabular</span>}{llc}            <span class="fu">\toprule</span>
+    NIM       <span class="op">&amp;</span> Nama   <span class="op">&amp;</span> Nilai <span class="fu">\\</span> <span class="fu">\midrule</span>
+    G65114071 <span class="op">&amp;</span> Auriza <span class="op">&amp;</span> 75    <span class="fu">\\</span>
+    G65114081 <span class="op">&amp;</span> Auzi   <span class="op">&amp;</span> 80    <span class="fu">\\</span> <span class="fu">\bottomrule</span>
+  <span class="kw">\end</span>{<span class="ex">tabular</span>}
+<span class="kw">\end</span>{<span class="ex">table</span>}</code></pre></div>
+</section><section class="slide level2">
+
+<p>Nilai mahasiswa dapat dilihat pada Tabel .</p>
+
+</section><section id="gambar" class="slide level2">
+<h2>Gambar</h2>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="co">%\usepackage{graphicx}</span>
+
+Peta dengan proyeksi <span class="fu">\textit</span>{butterfly} dapat dilihat
+pada Gambar <span class="kw">\ref</span>{<span class="ex">fig.peta</span>}.
+
+<span class="kw">\begin</span>{<span class="ex">figure</span>}[tb]
+  <span class="fu">\centering</span>
+  <span class="bu">\includegraphics</span>[width=0.9<span class="fu">\textwidth</span>]{<span class="ex">earth</span>}
+  <span class="fu">\caption</span>{Proyeksi <span class="fu">\textit</span>{butterfly}.}
+  <span class="kw">\label</span>{<span class="ex">fig.peta</span>}
+<span class="kw">\end</span>{<span class="ex">figure</span>}</code></pre></div>
+</section><section class="slide level2">
+
+<p>Peta dengan proyeksi  dapat dilihat pada Gambar .</p>
+
+</section></section>
+<section><section id="fin" class="titleslide slide level1"><h1>FIN</h1></section></section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

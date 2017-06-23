@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Auriza Akbar">
+  <meta name="dcterms.date" content="2017-01-01">
+  <title>Arduino vs Raspberry Pi</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  
+  
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Arduino vs Raspberry Pi</h1>
+  <p class="author">Auriza Akbar</p>
+  <p class="date">2017</p>
+</section>
+
+<section><section id="arduino" class="titleslide slide level1"><h1>Arduino</h1></section><section id="arduino-nano" class="slide level2">
+<h2>Arduino Nano</h2>
+<ul>
+<li>mikrokontroler</li>
+<li>menjalankan program sederhana secara terus-menerus</li>
+<li>untuk mengontrol sensor dan aktuator</li>
+<li>hemat daya, sekitar 0.1 Watt</li>
+<li>harga sekitar 35 ribu</li>
+</ul>
+</section><section id="spesifikasinano" class="slide level2">
+<h2>Spesifikasi<a href="#/fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h2>
+<ul>
+<li>ATMega328P (AVR 8-bit)</li>
+<li><em>Clock</em>: 16 MHz</li>
+<li>Memori <em>flash</em>: 32 kiB</li>
+<li>Pin IO analog: 8</li>
+<li>Pin IO digital: 22</li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="../nano.jpg" alt="Arduino Nano" style="width:80.0%" /><figcaption>Arduino Nano</figcaption>
+</figure>
+</section><section id="penelitian-terkait" class="slide level2">
+<h2>Penelitian Terkait</h2>
+<p>Arduino banyak dipakai pada bidang robotika. Misalnya robot untuk membantu lansia <span class="citation" data-cites="chu16">(Chu <em>et al.</em> 2016)</span> dan robot untuk edukasi <span class="citation" data-cites="lopez16">(López-Rodríguez dan Cuesta 2016)</span>.</p>
+</section></section>
+<section><section id="raspberry-pi" class="titleslide slide level1"><h1>Raspberry Pi</h1></section><section id="raspberry-pi-3-model-b" class="slide level2">
+<h2>Raspberry Pi 3 Model B</h2>
+<ul>
+<li>minikomputer</li>
+<li>sistem operasi Linux</li>
+<li>untuk pemakaian umum dan program yang kompleks</li>
+<li>hemat daya, sekitar 1.5 Watt</li>
+<li>harga sekitar 500 ribu</li>
+</ul>
+</section><section id="spesifikasirpi3" class="slide level2">
+<h2>Spesifikasi<a href="#/fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></h2>
+<ul>
+<li>CPU: <em>quad-core</em> 1.2 GHz (ARMv8 64-bit)</li>
+<li>RAM: 1 GiB</li>
+<li>Port Ethernet, HDMI, dan USB</li>
+<li>WiFi dan Bluetooth</li>
+<li>Pin GPIO: 40</li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="../raspi.jpg" alt="Raspberry Pi 3" style="width:80.0%" /><figcaption>Raspberry Pi 3</figcaption>
+</figure>
+</section><section id="penelitian-terkait-1" class="slide level2">
+<h2>Penelitian Terkait</h2>
+<p>Raspberry Pi banyak dipakai untuk otomatisasi dan monitoring. <span class="citation" data-cites="jain14">Jain <em>et al.</em> (2014)</span> membangun sistem otomatisasi rumah berbasis e-mail, sedangkan <span class="citation" data-cites="ferdoush14">Ferdoush dan Li (2014)</span> membangun jaringan monitoring lingkungan dengan Raspberry Pi dan Arduino.</p>
+</section></section>
+<section><section id="fin" class="titleslide slide level1"><h1>FIN</h1></section><section id="referensi" class="slide level2">
+<h2>Referensi</h2>
+
+<div id="refs" class="references">
+<div id="ref-chu16">
+<p>Chu HC, Chien MF, Lin TH, Zhang ZJ. 2016. Design and implementation of an auto-following robot-car system for the elderly. Di dalam: <em>Int Conf Syst Sci Eng</em>. Puli (TW): IEEE. hlm 1–4.</p>
+</div>
+<div id="ref-ferdoush14">
+<p>Ferdoush S, Li X. 2014. Wireless sensor network system design using Raspberry Pi and Arduino for environmental monitoring applications. <em>Procedia Comput Sci</em>. 34:103–110.</p>
+</div>
+<div id="ref-jain14">
+<p>Jain S, Vaibhav A, Goyal L. 2014. Raspberry Pi based interactive home automation system through e-mail. Di dalam: <em>Int Conf Rel Optim Inform Technol</em>. Faridabad (IN): IEEE. hlm 277–280.</p>
+</div>
+<div id="ref-lopez16">
+<p>López-Rodríguez FM, Cuesta F. 2016. Andruino-A1: low-cost educational mobile robot based on Android and Arduino. <em>J Intell Robot Syst</em>. 81(1):63–76.</p>
+</div>
+</div>
+</section></section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://www.arduino.cc/en/Main/arduinoBoardNano" class="uri">https://www.arduino.cc/en/Main/arduinoBoardNano</a><a href="#/fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/" class="uri">https://www.raspberrypi.org/products/raspberry-pi-3-model-b/</a><a href="#/fnref2">↩</a></p></li>
+</ol>
+</section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

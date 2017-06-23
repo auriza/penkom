@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Auriza Akbar">
+  <meta name="dcterms.date" content="2017-01-01">
+  <title>Markdown</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  
+  
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Markdown</h1>
+  <p class="author">Auriza Akbar</p>
+  <p class="date">2017</p>
+</section>
+
+<section><section id="motivasi" class="titleslide slide level1"><h1>Motivasi</h1></section><section id="mengapa-markdown" class="slide level2">
+<h2>Mengapa Markdown?</h2>
+<ul>
+<li><em>no markup</em></li>
+<li>mudah ditulis</li>
+<li>mudah dibaca</li>
+<li>teks biasa (.md)</li>
+</ul>
+</section><section id="populer" class="slide level2">
+<h2>Populer</h2>
+<ul>
+<li>GitHub</li>
+<li>StackOverflow</li>
+<li>WordPress</li>
+<li>Moodle (LMS)</li>
+<li>…</li>
+</ul>
+</section></section>
+<section><section id="sintaks" class="titleslide slide level1"><h1>Sintaks</h1></section><section id="metadatayaml" class="slide level2">
+<h2>Metadata<a href="#/fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h2>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<span class="fu">title:</span><span class="at"> Markdown</span>
+<span class="fu">author:</span><span class="at"> Auriza Akbar</span>
+<span class="fu">institute:</span><span class="at"> Ilmu Komputer IPB</span>
+<span class="fu">date:</span><span class="at"> 2017</span>
+<span class="fu">theme:</span><span class="at"> Dresden</span>
+<span class="fu">header-includes:</span>
+<span class="kw">-</span> \renewcommand<span class="kw">{</span>\figurename<span class="kw">}{</span>Gambar<span class="kw">}</span>
+<span class="kw">-</span> \renewcommand<span class="kw">{</span>\tablename<span class="kw">}{</span>Tabel<span class="kw">}</span>
+<span class="ot">---</span></code></pre></div>
+</section><section id="paragraf" class="slide level2">
+<h2>Paragraf</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Sebuah paragraf.
+
+Paragraf selanjutnya setelah satu baris kosong.</code></pre></div>
+</section><section id="paragraf-1" class="slide level2">
+<h2>Paragraf</h2>
+<dl>
+<dt><code>\[space]</code></dt>
+<dd><em>non-breaking space</em>
+</dd>
+<dt><code>\[newline]</code></dt>
+<dd><em>line-break</em>
+</dd>
+<dt><code>--</code></dt>
+<dd><em>en dash</em>, –
+</dd>
+<dt><code>---</code></dt>
+<dd><em>em dash</em>, —
+</dd>
+<dt><code>...</code></dt>
+<dd><em>ellipsis</em>
+</dd>
+</dl>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Harga emas saat ini sekitar Rp\ 550\ 000 per gram,
+wajib dikeluarkan zakatnya jika sudah mencapai
+*nishab* 85 gram dan *haul* setahun.</code></pre></div>
+<p>Zakat mal berlaku untuk … Harga emas saat ini sekitar Rp 550 000 per gram, wajib dikeluarkan zakatnya jika sudah mencapai <em>nishab</em> 85 gram dan <em>haul</em> setahun.</p>
+</section><section id="format-teks" class="slide level2">
+<h2>Format Teks</h2>
+<dl>
+<dt><code>_emphasis_</code></dt>
+<dd><em>emphasis</em>
+</dd>
+<dt><code>**strong**</code></dt>
+<dd><strong>strong emphasis</strong>
+</dd>
+<dt><code>`code`</code></dt>
+<dd><code>code</code>
+</dd>
+<dt><code>~~strike~~</code></dt>
+<dd><del>strike</del>
+</dd>
+<dt><code>^super^</code></dt>
+<dd><sup>super</sup>script
+</dd>
+<dt><code>~sub~</code></dt>
+<dd><sub>sub</sub>script
+</dd>
+</dl>
+</section><section id="header" class="slide level2">
+<h2>Header</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu"># Header 1</span>
+
+<span class="fu">## Header 2</span>
+
+<span class="fu">### Header 3</span>
+
+<span class="fu">#### Header 4</span>
+
+<span class="fu">##### Header 5</span>
+
+<span class="fu">###### Header 6</span></code></pre></div>
+</section><section id="kutipan" class="slide level2">
+<h2>Kutipan</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">&gt;<span class="dt"> There are six levels of knowledge:</span>
+<span class="dt">&gt;</span>
+<span class="dt">&gt; 1. excellence in asking questions,</span>
+<span class="dt">&gt; 2. excellence in paying attention and listening,</span>
+<span class="dt">&gt; 3. excellence in understanding, ...</span></code></pre></div>
+<blockquote>
+<p>There are six levels of knowledge:</p>
+<ol type="1">
+<li>excellence in asking questions,</li>
+<li>excellence in paying attention and listening,</li>
+<li>excellence in understanding,</li>
+<li>memorizing,</li>
+<li>teaching, and</li>
+<li>implementing it and appreciating its boundaries.</li>
+</ol>
+</blockquote>
+</section><section id="kode-program" class="slide level2">
+<h2>Kode Program</h2>
+<pre><code>```c
+int main() {
+    printf(&quot;Hello world!\n&quot;);
+    return 0;
+}
+```</code></pre>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> main() {
+    printf(<span class="st">&quot;Hello world!</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</section><section id="list" class="slide level2">
+<h2>List</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">- <span class="fl">satu</span>
+<span class="fl">- dua</span>
+<span class="fl">- tiga</span></code></pre></div>
+<ul>
+<li>satu</li>
+<li>dua</li>
+<li>tiga</li>
+</ul>
+</section><section id="list-urutan" class="slide level2">
+<h2>List Urutan</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">satu</span>
+<span class="fl">2. dua</span>
+<span class="fl">3. tiga</span></code></pre></div>
+<ol type="1">
+<li>satu</li>
+<li>dua</li>
+<li>tiga</li>
+</ol>
+</section><section id="list-bersarang" class="slide level2">
+<h2>List Bersarang</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">satu</span>
+<span class="fl">    - indentasi</span>
+<span class="fl">    - empat spasi</span>
+<span class="fl">2. dua</span>
+<span class="fl">3. tiga</span></code></pre></div>
+<ol type="1">
+<li>satu
+<ul>
+<li>indentasi</li>
+<li>empat spasi</li>
+</ul></li>
+<li>dua</li>
+<li>tiga</li>
+</ol>
+</section><section id="list-definisi" class="slide level2">
+<h2>List Definisi</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">awkward
+: causing difficulty; hard to do or deal with.
+
+goggle
+: look with wide open eyes.</code></pre></div>
+<dl>
+<dt>awkward</dt>
+<dd>causing difficulty; hard to do or deal with.
+</dd>
+<dt>goggle</dt>
+<dd>look with wide open eyes.
+</dd>
+</dl>
+</section><section id="tautan" class="slide level2">
+<h2>Tautan</h2>
+<h3 id="otomatis">Otomatis</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Kunjungi <span class="ot">&lt;http://cs.ipb.ac.id&gt;</span> atau email ke
+<span class="ot">&lt;cs@ipb.ac.id&gt;</span>.</code></pre></div>
+<p>Kunjungi <a href="http://cs.ipb.ac.id" class="uri">http://cs.ipb.ac.id</a> atau email ke <a href="mailto:cs@ipb.ac.id">cs@ipb.ac.id</a>.</p>
+</section><section id="tautan-1" class="slide level2">
+<h2>Tautan</h2>
+<h3 id="inline"><em>Inline</em></h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Kunjungi <span class="ot">[Ilkom IPB](http://cs.ipb.ac.id)</span> atau
+kirim <span class="ot">[email](mailto:cs@ipb.ac.id)</span>.</code></pre></div>
+<h3 id="reference"><em>Reference</em></h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Kunjungi [Ilkom IPB] atau kirim [email].
+
+<span class="ot">[ilkom ipb]: http://cs.ipb.ac.id</span>
+<span class="ot">[email]: mailto:cs@ipb.ac.id</span></code></pre></div>
+<p>Kunjungi <a href="http://cs.ipb.ac.id">Ilkom IPB</a> atau kirim <a href="mailto:cs@ipb.ac.id">email</a>.</p>
+</section><section id="catatan-kaki" class="slide level2">
+<h2>Catatan Kaki</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Dibimbing oleh Dr Heru Sukoco<span class="ot">[^hrs]</span> dan
+Dr Sugi Guritman<span class="ot">[^sgn]</span>.
+
+<span class="ot">[^hrs]</span>: Departemen Ilmu Komputer IPB
+<span class="ot">[^sgn]</span>: Departemen Matematika IPB</code></pre></div>
+<p>Dibimbing oleh Dr Heru Sukoco<a href="#/fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> dan Dr Sugi Guritman<a href="#/fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
+</section><section id="gambar" class="slide level2">
+<h2>Gambar</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Proyeksi persegi untuk peta dunia dapat dilihat
+pada Gambar \ref{fig.map}.
+
+<span class="al">![Proyeksi Peirce.](map.jpg)</span>{#fig.map width=50%}</code></pre></div>
+</section><section id="gambar-1" class="slide level2">
+<h2>Gambar</h2>
+<p>Proyeksi persegi untuk peta dunia dapat dilihat pada Gambar .</p>
+<figure>
+<img src="map.jpg" alt="Proyeksi Peirce." id="fig.map" style="width:50.0%" /><figcaption>Proyeksi Peirce.</figcaption>
+</figure>
+</section><section id="tabel" class="slide level2">
+<h2>Tabel</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Table: Nilai Penkom.
+
+ NIM  Nama       Nilai
+----- --------- ------
+ 001  Hanif         70
+ 002  Sarah         80
+ 003  Ahmad        100</code></pre></div>
+<table>
+<caption>Nilai Penkom.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">NIM</th>
+<th style="text-align: left;">Nama</th>
+<th style="text-align: right;">Nilai</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">001</td>
+<td style="text-align: left;">Hanif</td>
+<td style="text-align: right;">70</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">002</td>
+<td style="text-align: left;">Sarah</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">003</td>
+<td style="text-align: left;">Ahmad</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+</section><section id="persamaan-matematika" class="slide level2">
+<h2>Persamaan Matematika</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Untuk menulis persamaan, sama dengan LaTeX. Misal
+persamaan *inline* $x^2 + y^2 = 0$, atau persamaan
+*displayed*:
+
+$$ \sum_{i=0}^n A_i $$</code></pre></div>
+<p>Untuk menulis persamaan, sama dengan LaTeX. Misal persamaan <em>inline</em> <span class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup> = 0</span>, atau persamaan <em>displayed</em>:</p>
+<p><br /><span class="math display">$$\sum_{i=0}^n A_i$$</span><br /></p>
+</section><section id="persamaan-matematika-1" class="slide level2">
+<h2>Persamaan Matematika</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Untuk persamaan bernomor, langsung dengan sintaks
+LaTeX:
+
+\begin{equation}
+<span class="bn">    \sum_{i=0}^n A_i</span>
+\end{equation}</code></pre></div>
+<p>Untuk persamaan bernomor, langsung dengan sintaks LaTeX:</p>
+
+</section><section id="lain-lain" class="slide level2">
+<h2>Lain-lain</h2>
+<p>Untuk sintaks yang tidak disediakan Markdown, bisa langsung menggunakan sintaks LaTeX atau HTML.</p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="fu">\textsc</span>{Auriza Akbar}</code></pre></div>
+
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;span</span><span class="ot"> style=</span><span class="st">&quot;font-variant:small-caps&quot;</span><span class="kw">&gt;</span>Auriza Akbar<span class="kw">&lt;/span&gt;</span></code></pre></div>
+<p><span style="font-variant: small-caps;">Auriza Akbar</span></p>
+</section></section>
+<section><section id="kompilasi" class="titleslide slide level1"><h1>Kompilasi</h1></section><section id="pandoc" class="slide level2">
+<h2>Pandoc</h2>
+<ul>
+<li>konversi Markdown ke:
+<ul>
+<li>HTML</li>
+<li>LaTeX, PDF</li>
+<li>EPUB</li>
+<li>ODT, docx</li>
+<li>man page</li>
+</ul></li>
+<li>berbasis <em>command line</em><a href="#/fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></li>
+</ul>
+</section><section id="instalasi-pandocnote" class="slide level2">
+<h2>Instalasi Pandoc<a href="#/fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></h2>
+<dl>
+<dt>Windows</dt>
+<dd><a href="https://github.com/jgm/pandoc/releases" class="uri">https://github.com/jgm/pandoc/releases</a>
+</dd>
+<dt>Linux</dt>
+<dd><code>apt install pandoc</code>
+</dd>
+<dt><em>Online</em></dt>
+<dd><a href="https://pandoc.org/try/" class="uri">https://pandoc.org/try/</a>
+</dd>
+</dl>
+</section><section id="opsi-penting" class="slide level2">
+<h2>Opsi Penting</h2>
+<dl>
+<dt><code>-o</code></dt>
+<dd><em>output file</em> …
+</dd>
+<dt><code>-t</code></dt>
+<dd><em>to format</em> …
+</dd>
+<dt><code>-F</code></dt>
+<dd><em>filter program</em> …
+</dd>
+</dl>
+<h3 id="html">HTML</h3>
+<dl>
+<dt><code>-s</code></dt>
+<dd><em>standalone</em>
+</dd>
+<dt><code>-S</code></dt>
+<dd><em>smart punctuation</em>
+</dd>
+<dt><code>-c</code></dt>
+<dd><em>CSS file</em> …
+</dd>
+<dt><code>--mathjax</code></dt>
+<dd>render persamaan dengan MathJax
+</dd>
+</dl>
+<!--
+`--self-contained`
+: satukan semua *style* dan *script* ke *file* HTML
+-->
+</section><section id="konversi-dokumen" class="slide level2">
+<h2>Konversi Dokumen</h2>
+<h3 id="pdf">PDF</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pandoc</span> text.md -o text.pdf</code></pre></div>
+<h3 id="html-1">HTML</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pandoc</span> text.md -o text.html -sS</code></pre></div>
+</section><section id="konversi-slide" class="slide level2">
+<h2>Konversi Slide</h2>
+<h3 id="pdf-beamer">PDF (Beamer)</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pandoc</span> slide.md -o slide.pdf -t beamer</code></pre></div>
+<h3 id="html-slidy-reveal.jsreveal">HTML (Slidy, Reveal.js<a href="#/fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>)</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pandoc</span> slide.md -o slide.html -sSt slidy
+
+<span class="ex">pandoc</span> slide.md -o slide.html -sSt revealjs</code></pre></div>
+</section></section>
+<section><section id="slide" class="titleslide slide level1"><h1>Slide</h1></section><section id="aturan" class="slide level2">
+<h2>Aturan</h2>
+<dl>
+<dt><code>#</code></dt>
+<dd><em>slide</em> judul
+</dd>
+<dt><code>##</code></dt>
+<dd><em>slide</em> baru
+</dd>
+<dt><code>---</code></dt>
+<dd><em>slide</em> baru tanpa judul
+</dd>
+<dt><code>. . .</code></dt>
+<dd><em>pause</em>
+</dd>
+</dl>
+</section><section id="list-inkremental" class="slide level2">
+<h2>List Inkremental</h2>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">&gt;<span class="dt"> - satu</span>
+<span class="dt">&gt; - dua</span>
+<span class="dt">&gt; - tiga</span></code></pre></div>
+<ul>
+<li class="fragment">satu</li>
+<li class="fragment">dua</li>
+<li class="fragment">tiga</li>
+</ul>
+</section><section id="tema" class="slide level2">
+<h2>Tema</h2>
+<p>Tambahkan metadata <code class="sourceCode yaml"><span class="fu">theme:</span></code> untuk mengatur tema <em>slide</em>.</p>
+<h3 id="beamer">Beamer</h3>
+<p>Antibes Bergen Berkeley Berlin Boadilla CambridgeUS Darmstadt Dresden Frankfurt Goettingen Hannover Ilmenau JuanLesPins Madrid Montpellier PaloAlto Pittsburgh Rochester Singapore Szeged</p>
+<h3 id="reveal.js">Reveal.js</h3>
+<p>beige black blood league moon night serif simple sky solarized white</p>
+</section></section>
+<section><section id="fin" class="titleslide slide level1"><h1>FIN</h1></section></section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><em>lihat</em> <a href="http://pandoc.org/MANUAL.html#variables-set-by-pandoc" class="uri">http://pandoc.org/MANUAL.html#variables-set-by-pandoc</a><a href="#/fnref1">↩</a></p></li>
+<li id="fn2"><p>Departemen Ilmu Komputer IPB<a href="#/fnref2">↩</a></p></li>
+<li id="fn3"><p>Departemen Matematika IPB<a href="#/fnref3">↩</a></p></li>
+<li id="fn4"><p><em>lihat</em> manualnya di <a href="http://pandoc.org/README.html" class="uri">http://pandoc.org/README.html</a><a href="#/fnref4">↩</a></p></li>
+<li id="fn5"><p>instal LaTeX dahulu agar bisa konversi ke PDF<a href="#/fnref5">↩</a></p></li>
+<li id="fn6"><p>unduh <a href="https://github.com/hakimel/reveal.js/archive/master.zip">Reveal.js</a> dan ekstrak ke direktori yang sama<a href="#/fnref6">↩</a></p></li>
+</ol>
+</section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
