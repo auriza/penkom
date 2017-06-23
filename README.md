@@ -7,7 +7,7 @@
 
 2. CSS
     - Kuliah: [CSS](slide/2-css.pdf), [CSS Layout](slide/2-css-layout.pdf)
-        - Contoh: [Blog](slide/blog.html)
+        - Contoh: [Blog](https://auriza.github.io/penkom/blog.html)
     - Lab: [CSS](https://www.codecademy.com/learn/learn-html-css)
         - Tugas: [Résumé styling](lab/task2.md)
 

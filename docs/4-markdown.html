@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -48,18 +48,19 @@ code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
-  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   
   
   
@@ -328,8 +329,8 @@ persamaan *inline* $x^2 + y^2 = 0$, atau persamaan
 *displayed*:
 
 $$ \sum_{i=0}^n A_i $$</code></pre></div>
-<p>Untuk menulis persamaan, sama dengan LaTeX. Misal persamaan <em>inline</em> <span class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup> = 0</span>, atau persamaan <em>displayed</em>:</p>
-<p><br /><span class="math display">$$\sum_{i=0}^n A_i$$</span><br /></p>
+<p>Untuk menulis persamaan, sama dengan LaTeX. Misal persamaan <em>inline</em> <span class="math inline">\(x^2 + y^2 = 0\)</span>, atau persamaan <em>displayed</em>:</p>
+<p><span class="math display">\[\sum_{i=0}^n A_i\]</span></p>
 </section><section id="persamaan-matematika-1" class="slide level2">
 <h2>Persamaan Matematika</h2>
 <div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">Untuk persamaan bernomor, langsung dengan sintaks
@@ -339,7 +340,9 @@ LaTeX:
 <span class="bn">    \sum_{i=0}^n A_i</span>
 \end{equation}</code></pre></div>
 <p>Untuk persamaan bernomor, langsung dengan sintaks LaTeX:</p>
-
+<span class="math display">\[\begin{equation}
+    \sum_{i=0}^n A_i
+\end{equation}\]</span>
 </section><section id="lain-lain" class="slide level2">
 <h2>Lain-lain</h2>
 <p>Untuk sintaks yang tidak disediakan Markdown, bisa langsung menggunakan sintaks LaTeX atau HTML.</p>
@@ -470,8 +473,8 @@ LaTeX:
     </div>
   </div>
 
-  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
-  <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
 
   <script>
 
@@ -481,9 +484,9 @@ LaTeX:
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
-              { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
