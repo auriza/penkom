@@ -1,8 +1,8 @@
 # Slide PDF Beamer
 
-Buatlah *slide* PDF Beamer sesuai dengan contoh *file* `tugas.pdf` berikut.
+Buatlah *slide* PDF Beamer sesuai dengan contoh *slide* [Arduino vs Raspberry Pi](arduino-raspi.pdf) ini.
 Ganti nama penulis dengan nama anda dan silahkan pakai [tema](http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html) apapun.
-Gunakan *file* `[ref.bib](../ref/ref.bib)`, `[ipb.csl](../ref/ipb.csl)`, dan gambar yang disediakan berikut.
+Gunakan *file* [ref.bib](../ref/ref.bib), [ipb.csl](../ref/ipb.csl), dan gambar yang disediakan berikut.
 Kumpulkan dalam satu *file* PDF dengan nama `[NIM].pdf`.
 
 ### Kompilasi
